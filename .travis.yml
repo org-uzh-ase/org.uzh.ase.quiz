@@ -1,12 +1,15 @@
 language: java
 services:
   - docker
+  - mongodb
 addons:
   sonarcloud:
     organization: "org-uzh-ase"
     token:
       secure: "pb01AgGgas+niz+mhcWGWm+xStNZv2KM5Rjkd0ZVJSyXHNQCgTohlGL6XwQ+ZUmivJ2qBMccnXKueCkjvO69aEFc2M2t7zxSyx484zNrJ92QFJak3OXhrfsuwEh7FP/kjtAN/DdRw5fOp6/R78CO3MPPznMejMtfY3PmuzWZtzACz8God8utYlB1ymH+Ne7tVK+w+PBFy7AW/FGAIGFsZMBA3ANrLOnycc8DKotNnzy6Tt/srGj/PPk8TPqFyZtlQMDMzLNiseLaspIQVbgA6wjjDJTStHJylIfnB5zWDMiRgqj+QOGsTW9J8jfFu5qsn9GoVZFbgNt2nFw+41wfG/UlStYdKiaxR0YSwtIeGA5nEv+JS8sFCU78gC7mZL2IAxze/2jalhjy4BrrUDZVDlexrKUTJZiL7MH7kambSTO3pcmRjPtL0ONRo0LIXTs2FSutjrg5zF5jSE7Ha/iBrluJ5gxnG9LNzwuJ0zIBUt07HWSJi9Z/mAo2NWNpy3UBhz9dAW2tl4qA5thqx5McI9zM7JGwRySqGPla1O6GVQio1n1eNvUJf9Gi8+JqzAuIQTTxwvMzIX0LAcJ4ci8wKtsAyRWE7TFwpp4I9xuubCsrmIaelw304Lyysw1arjsdb2H3IJmJfeOXhj0fjQn13nEO1dnrra5pbjgGdNEF1KM=" # encrypted value of your token
 
+before_script:
+  - sleep 15
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=org-uzh-ase_org.uzh.ase.quiz
