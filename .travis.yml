@@ -3,6 +3,8 @@ services:
   - docker
 script:
   - mvn test -B
-  - docker build -t quiz .
-  - docker run -d -p 8080:8080 quiz
-  - docker ps -a
+
+  # Docker buil check
+  # - docker build -t quiz .
+  # - docker run -d -p 8080:8080 quiz
+  # - docker ps -a
