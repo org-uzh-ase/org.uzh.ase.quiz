@@ -8,9 +8,9 @@ addons:
     token:
       secure: $SONAR_TOKEN  # encrypted value of your token
 script:
-  - mvn clean verify sonar:sonar  -Dsonar.login=$SONAR_LOGIN -Dsonar.projectKey=org-uzh-ase_org.uzh.ase.quiz
+  - mvn clean verify sonar:sonar -Dsonar.login=$SONAR_LOGIN -Dsonar.projectKey=org-uzh-ase_org.uzh.ase.quiz
   # -Pcoverage
-  
+
   # Docker buil check
   # - docker build -t quiz .
   # - docker run -d -p 8080:8080 quiz

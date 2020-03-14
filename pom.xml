@@ -52,6 +52,9 @@
 	<profiles>
         <profile>
             <id>coverage</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -75,7 +78,7 @@
                 </plugins>
             </build>
         </profile>
-        <profile>
+        <!-- <profile>
             <id>sonar</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -85,7 +88,7 @@
                   http://myserver:9000
                 </sonar.host.url>
             </properties> -->
-        </profile>
+        </profile> -->
     </profiles>
 
 </project>
