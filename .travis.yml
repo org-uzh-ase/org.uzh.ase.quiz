@@ -12,7 +12,7 @@ before_script:
   - sleep 15
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.login=$SONAR_LOGIN -Dsonar.projectKey=org-uzh-ase_org.uzh.ase.quiz
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar sonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.projectKey=org-uzh-ase_org.uzh.ase.quiz
 
   # Docker buil check
   # - docker build -t quiz .
