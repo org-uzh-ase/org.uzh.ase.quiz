@@ -83,11 +83,11 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <!-- <properties>
+            <properties>
                 <sonar.host.url>
                   http://myserver:9000
                 </sonar.host.url>
-            </properties> -->
+            </properties>
         </profile> -->
     </profiles>
 
