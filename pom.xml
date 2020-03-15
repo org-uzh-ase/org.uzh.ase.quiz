@@ -60,6 +60,7 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.8.5</version>
                         <executions>
                             <execution>
                                 <id>prepare-agent</id>
@@ -78,17 +79,6 @@
                 </plugins>
             </build>
         </profile>
-        <!-- <profile>
-            <id>sonar</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <sonar.host.url>
-                  http://myserver:9000
-                </sonar.host.url>
-            </properties>
-        </profile> -->
     </profiles>
 
 </project>
