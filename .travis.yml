@@ -7,6 +7,12 @@ addons:
     organization: "org-uzh-ase"
     token:
       secure: $SONAR_TOKEN  # encrypted value of your token
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
 script:
   - mvn clean verify sonar:sonar -Dsonar.login=$SONAR_LOGIN -Dsonar.projectKey=org-uzh-ase_org.uzh.ase.quiz
   # -Pcoverage
