@@ -9,7 +9,7 @@ addons:
       secure: $SONAR_TOKEN  # encrypted value of your token
 
 script:
-  - mvn clean verify sonar:sonar
+  - mvn clean verify sonar:sonar -Dsonar.login=$SONAR_LOGIN
 
   # Docker buil check
   # - docker build -t quiz .

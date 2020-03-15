@@ -81,9 +81,6 @@
                 <sonar.projectKey>
             		org-uzh-ase_org.uzh.ase.quiz
                 </sonar.projectKey>
-				<sonar.login>
-					$SONAR_LOGIN
-				</sonar.login>
             </properties>
         </profile>
     </profiles>
