@@ -21,3 +21,48 @@ script:
   # - docker build -t quiz .
   # - docker run -d -p 8080:8080 quiz
   # - docker ps -a
+
+
+
+
+#   [INFO] Sensor JavaSquidSensor [java]
+
+# [INFO] Configured Java source version (sonar.java.source): 8
+
+# [INFO] JavaClasspath initialization
+
+# [INFO] JavaClasspath initialization (done) | time=15ms
+
+# [INFO] JavaTestClasspath initialization
+
+# [INFO] JavaTestClasspath initialization (done) | time=3ms
+
+# [INFO] Java Main Files AST scan
+
+# [INFO] 3 source files to be analyzed
+
+# [INFO] 3/3 source files have been analyzed
+
+# [INFO] Java Main Files AST scan (done) | time=1904ms
+
+# [INFO] Java Test Files AST scan
+
+# [INFO] 1 source files to be analyzed
+
+# [INFO] Java Test Files AST scan (done) | time=47ms
+
+# [INFO] 1/1 source files have been analyzed
+
+# [INFO] Sensor JavaSquidSensor [java] (done) | time=2172ms
+
+# [INFO] Sensor SonarCSS Rules [cssfamily]
+
+# [INFO] No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+
+# [INFO] Sensor SonarCSS Rules [cssfamily] (done) | time=1ms
+
+# [INFO] Sensor SurefireSensor [java]
+
+# [INFO] parsing [/home/travis/build/org-uzh-ase/org.uzh.ase.quiz/target/surefire-reports]
+
+# [INFO] Sensor SurefireSensor [java] (done) | time=45ms

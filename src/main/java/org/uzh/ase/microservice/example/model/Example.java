@@ -10,4 +10,10 @@ public class Example {
     public String getText() {
         return text;
     }
+
+    public int comp(Integer x) {
+        int y = 4;
+        int z = 6;
+        return x * z;
+    }
 }
