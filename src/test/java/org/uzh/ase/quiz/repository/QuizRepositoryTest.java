@@ -10,6 +10,7 @@ import org.uzh.ase.quiz.model.Quiz;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @DataMongoTest
 @ExtendWith(SpringExtension.class)
@@ -24,5 +25,9 @@ public class QuizRepositoryTest {
         assertEquals(1, quizzes.size());
         Quiz quiz = quizzes.get(0);
         assertEquals("some_id", quiz.getImdbId());
+        assertNotNull(quiz.getId());
+        assertEquals(String.format(
+                "Quiz[id=%s, imdb_id='%s']",
+                quiz.getId(), "some_id"), quiz.toString());
     }
 }

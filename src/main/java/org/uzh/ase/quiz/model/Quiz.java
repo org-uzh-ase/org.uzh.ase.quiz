@@ -20,7 +20,9 @@ public class Quiz {
         return imdbId;
     }
 
-    public Quiz(String imdbId){
+public Quiz(){}
+
+public Quiz(String imdbId){
         this.imdbId = imdbId;
     }
 
