@@ -13,7 +13,7 @@ import org.uzh.ase.quiz.repository.QuizRepository;
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-	public static void main() {
+	public static void main(String[] args) {
 		SpringApplication.run(Application.class);
 	}
 
