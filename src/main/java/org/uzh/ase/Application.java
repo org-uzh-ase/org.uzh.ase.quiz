@@ -13,8 +13,8 @@ import org.uzh.ase.quiz.repository.QuizRepository;
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+	public static void main() {
+		SpringApplication.run(Application.class);
 	}
 
 	@Bean
