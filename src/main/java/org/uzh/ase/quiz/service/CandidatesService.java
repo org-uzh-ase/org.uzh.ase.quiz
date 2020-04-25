@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 public class CandidatesService {
-    static final String baseUrl = "http://localhost:8082/";
+    static final String BASEURL = "http://localhost:8082/";
 
     @Autowired
     MovieRepository movieRepository;
@@ -22,7 +22,7 @@ public class CandidatesService {
     RestTemplate restTemplate;
 
     public List<Movie> getCandidates(String movieId, int level) {
-        Movie[] response = restTemplate.getForObject(baseUrl + "api/candidates?movie_id=" + movieId + "&level=" + level, Movie[].class);
+        Movie[] response = restTemplate.getForObject(BASEURL + "api/candidates?movie_id=" + movieId + "&level=" + level, Movie[].class);
 
         List<Movie> result = new ArrayList<>();
 
@@ -34,6 +34,7 @@ public class CandidatesService {
         return result;
     }
 
+    @SuppressWarnings("java:S115") // suppressed because it is compliant by using SecureRandom instead of Random
     public String getRandomCode(int level){
        return RandomStringUtils.random(4 + level, 0, 0, true, false, (char[])null, new SecureRandom());
     }
