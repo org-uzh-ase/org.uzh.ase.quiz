@@ -34,7 +34,7 @@ public class CandidatesService {
         return result;
     }
 
-    @SuppressWarnings("java:S115") // suppressed because it is compliant by using SecureRandom instead of Random
+    @SuppressWarnings("java:S2245") // suppressed because it is compliant by using SecureRandom instead of Random
     public String getRandomCode(int level){
        return RandomStringUtils.random(4 + level, 0, 0, true, false, (char[])null, new SecureRandom());
     }
