@@ -1,4 +1,4 @@
-package org.uzh.ase;
+package org.uzh.ase.quiz;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

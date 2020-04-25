@@ -1,13 +1,14 @@
 package org.uzh.ase.quiz.service;
 
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Answers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.uzh.ase.quiz.model.Movie;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@SpringBootTest
 @RunWith(MockitoJUnitRunner.class)
 public class QuizServiceTest {
     @Mock(answer = Answers.RETURNS_DEEP_STUBS)

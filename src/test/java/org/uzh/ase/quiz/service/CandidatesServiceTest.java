@@ -1,22 +1,22 @@
 package org.uzh.ase.quiz.service;
 
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.client.RestTemplate;
 import org.uzh.ase.quiz.model.Movie;
 import org.uzh.ase.quiz.model.MovieDB;
 import org.uzh.ase.quiz.repository.MovieRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
+@SpringBootTest
 public class CandidatesServiceTest {
     @Mock
     private RestTemplate restTemplate;

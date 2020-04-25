@@ -1,7 +1,7 @@
 package org.uzh.ase.quiz.model;
 
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
