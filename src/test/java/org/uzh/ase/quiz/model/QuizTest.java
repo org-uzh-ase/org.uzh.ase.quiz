@@ -1,7 +1,6 @@
 package org.uzh.ase.quiz.model;
 
 import org.junit.Assert;
-import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
@@ -9,28 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 @SpringBootTest
-public class ModelTest {
-    @Test
-    public void testMovieDB(){
-        MovieDB movie = new MovieDB("test-imdbId", "some description", "Test Movie");
-        Assert.assertNotNull(movie);
-        Assert.assertNull(movie.getId());
-        Assert.assertEquals("some description", movie.getDescription() );
-        Assert.assertEquals("test-imdbId", movie.getImdbId() );
-        Assert.assertEquals("Test Movie", movie.getTitle() );
-        movie.setId("test-id");
-        Assert.assertEquals("test-id", movie.getId());
-    }
-
-    public void testMovie(){
-        Movie movie = new Movie("test-imdbId", "./poster.png", "Test Movie", "test-");
-        Assert.assertNotNull(movie);
-        Assert.assertEquals("./poster.png", movie.getPoster() );
-        Assert.assertEquals("test-imdbId", movie.getId() );
-        Assert.assertEquals("Test Movie", movie.getTitle() );
-        Assert.assertEquals("test-id", movie.getCode());
-    }
-
+public class QuizTest {
     public void testQuiz(){
         Movie movie1 = new Movie("1234548", "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIwOTQwNzg1MV5BMl5BanBnXkFtZTcwODc4MDU4Mg@@._V1_UX182_CR0,0,182,268_AL_.jpg", "The Men Who Stare at Goats", "klGjO");
         Movie movie2 = new Movie("2318527", "https://images-na.ssl-images-amazon.com/images/M/MV5BNzAwODI0MzAwOF5BMl5BanBnXkFtZTcwODkzMTc4OQ@@._V1_UX182_CR0,0,182,268_AL_.jpg", "Hell Baby", "IPrYs");
