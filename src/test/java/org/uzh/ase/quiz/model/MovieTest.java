@@ -1,10 +1,12 @@
 package org.uzh.ase.quiz.model;
 
 import org.junit.Assert;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class MovieTest {
+    @Test
     public void testMovie(){
         Movie movie = new Movie("test-imdbId", "./poster.png", "Test Movie", "test-");
         Assert.assertNotNull(movie);
