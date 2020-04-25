@@ -7,19 +7,22 @@ import org.springframework.web.client.RestTemplate;
 import org.uzh.ase.quiz.model.Movie;
 import org.uzh.ase.quiz.repository.MovieRepository;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class CandidatesService {
-    final String baseUrl = "http://localhost:8082/";
+    static final String baseUrl = "http://localhost:8082/";
 
     @Autowired
     MovieRepository movieRepository;
 
+    @Autowired
+    RestTemplate restTemplate;
+
     public List<Movie> getCandidates(String movieId, int level) {
-        RestTemplate restTemplate = new RestTemplate();
-        Movie[] response = restTemplate.getForObject(baseUrl + "api/candidates?movie_id=" + movieId + "&level=" + String.valueOf(level), Movie[].class);
+        Movie[] response = restTemplate.getForObject(baseUrl + "api/candidates?movie_id=" + movieId + "&level=" + level, Movie[].class);
 
         List<Movie> result = new ArrayList<>();
 
@@ -32,6 +35,6 @@ public class CandidatesService {
     }
 
     public String getRandomCode(int level){
-       return RandomStringUtils.random(4 + level, true, false);
+       return RandomStringUtils.random(4 + level, 0, 0, true, false, (char[])null, new SecureRandom());
     }
 }

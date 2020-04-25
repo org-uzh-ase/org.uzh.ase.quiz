@@ -13,6 +13,10 @@ public class MovieDB {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Field("imdb_id")
     private String imdbId;
 

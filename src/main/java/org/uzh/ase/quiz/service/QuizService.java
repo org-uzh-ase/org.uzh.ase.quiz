@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.uzh.ase.quiz.model.Movie;
 import org.uzh.ase.quiz.model.MovieDB;
 import org.uzh.ase.quiz.model.Quiz;
-import org.uzh.ase.quiz.repository.MovieRepository;
 
 import java.util.List;
 
