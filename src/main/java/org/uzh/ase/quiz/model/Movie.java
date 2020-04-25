@@ -1,10 +1,12 @@
 package org.uzh.ase.quiz.model;
 
 public class Movie {
+
     private String id;
     private String title;
     private String poster;
     private String code;
+
 
     public String getId() {
         return id;
