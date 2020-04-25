@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CandidateServiceTest {
+public class CandidatesServiceTest {
     @Mock
     private RestTemplate restTemplate;
 
