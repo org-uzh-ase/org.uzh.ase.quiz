@@ -1,17 +1,21 @@
 package org.uzh.ase.quiz.model;
 
 public class Movie {
-    private String imdbId;
+    private String id;
     private String title;
     private String poster;
     private String code;
 
-    public String getImdbId() {
-        return imdbId;
+    public String getId() {
+        return id;
     }
 
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getPoster() {
@@ -22,15 +26,14 @@ public class Movie {
         return code;
     }
 
-    public Movie(){
-    this.imdbId = "114709";
-    this.poster = "https://images-na.ssl-images-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_UX182_CR0,0,182,268_AL_.jpg";
-    this.title = "Toy Story (1995)";
-    this.code = "SAND";
-}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-public Movie(String imdbId, String poster, String title, String code){
-    this.imdbId = imdbId;
+    public Movie(){}
+
+public Movie(String id, String poster, String title, String code){
+    this.id = id;
     this.title = title;
     this.poster = poster;
     this.code = code;
