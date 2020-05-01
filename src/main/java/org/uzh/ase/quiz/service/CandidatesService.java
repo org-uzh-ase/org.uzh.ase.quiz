@@ -1,6 +1,7 @@
 package org.uzh.ase.quiz.service;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -30,7 +31,7 @@ public class CandidatesService {
         for(Movie movie : response){
             movie.setCode(getRandomCode(level));
             MovieDB tmp = movieRepository.findByid(movie.getId());
-            movie.setTitle(tmp != null ? tmp.getTitle() : "Some title");
+            movie.setTitle(StringUtils.isNotEmpty(tmp.getTitle()) ? tmp.getTitle() : "Some title");
             result.add(movie);
         }
         return result;
