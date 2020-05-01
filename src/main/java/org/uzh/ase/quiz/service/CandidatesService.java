@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.uzh.ase.quiz.model.Movie;
+import org.uzh.ase.quiz.model.MovieDB;
 import org.uzh.ase.quiz.repository.MovieRepository;
 
 import java.security.SecureRandom;
@@ -28,7 +29,8 @@ public class CandidatesService {
 
         for(Movie movie : response){
             movie.setCode(getRandomCode(level));
-            movie.setTitle(movieRepository.findByid(movie.getId()).getTitle());
+            MovieDB tmp = movieRepository.findByid(movie.getId());
+            movie.setTitle(tmp != null ? tmp.getTitle() : "Some title");
             result.add(movie);
         }
         return result;

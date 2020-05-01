@@ -1,5 +1,6 @@
 package org.uzh.ase.quiz.service;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
@@ -32,6 +33,12 @@ public class QuizService {
         Aggregation agg = newAggregation(
                 Aggregation.sample(1)
         );
-        return mongoTemplate.aggregate(agg, MovieDB.class, MovieDB.class).getMappedResults().get(0);
+        MovieDB tmp = mongoTemplate.aggregate(agg, MovieDB.class, MovieDB.class).getMappedResults().get(0);
+        // Only return movies for which we have a description
+        if(StringUtils.isEmpty(tmp.getDescription())){
+            return randomSample();
+        }else{
+            return tmp;
+        }
     }
 }
