@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.uzh.ase.quiz.model.Movie;
-import org.uzh.ase.quiz.repository.MovieRepository;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -14,9 +13,6 @@ import java.util.List;
 @Service
 public class CandidatesService {
     static final String BASEURL = "http://localhost:8082/";
-
-    @Autowired
-    MovieRepository movieRepository;
 
     @Autowired
     RestTemplate restTemplate;
@@ -28,7 +24,6 @@ public class CandidatesService {
 
         for(Movie movie : response){
             movie.setCode(getRandomCode(level));
-            movie.setTitle(movieRepository.findByid(movie.getId()).getTitle());
             result.add(movie);
         }
         return result;
