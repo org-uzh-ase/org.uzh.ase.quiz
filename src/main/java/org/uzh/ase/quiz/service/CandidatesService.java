@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.uzh.ase.quiz.model.Movie;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -27,7 +29,8 @@ public class CandidatesService {
         Properties properties = new Properties();
 
         try {
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties");
+            File initialFile = new File("./config.properties");
+            InputStream inputStream = new FileInputStream(initialFile);
 
             if (inputStream != null) {
                 properties.load(inputStream);
