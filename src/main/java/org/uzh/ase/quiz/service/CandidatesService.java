@@ -32,11 +32,7 @@ public class CandidatesService {
             File initialFile = new File("./config.properties");
             InputStream inputStream = new FileInputStream(initialFile);
 
-            if (inputStream != null) {
-                properties.load(inputStream);
-            } else {
-                return "localhost";
-            }
+            properties.load(inputStream);
 
             return properties.get("basePath").toString();
         }
