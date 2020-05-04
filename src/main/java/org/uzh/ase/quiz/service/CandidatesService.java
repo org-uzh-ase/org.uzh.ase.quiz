@@ -25,7 +25,7 @@ public class CandidatesService {
     @Autowired
     RestTemplate restTemplate;
 
-    private String getBaseurl(){
+    public String getBaseurl(){
         Properties properties = new Properties();
 
         try {
