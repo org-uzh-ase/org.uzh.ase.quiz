@@ -19,6 +19,7 @@ public class Application{
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/api/quizzes/quiz").allowedOrigins("http://localhost:4200");
+				registry.addMapping("/api/quizzes/quiz").allowedOrigins("http://localhost:80");
 			}
 		};
 	}

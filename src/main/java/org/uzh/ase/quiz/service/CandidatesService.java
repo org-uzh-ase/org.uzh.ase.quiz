@@ -1,34 +1,54 @@
 package org.uzh.ase.quiz.service;
 
+import java.io.InputStream;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.uzh.ase.quiz.model.Movie;
-import org.uzh.ase.quiz.repository.MovieRepository;
 
 @Service
 public class CandidatesService {
-    static final String BASEURL = "http://candidates:8082/";
+    private String baseUrl;
 
-    @Autowired
-    MovieRepository movieRepository;
+    public CandidatesService(){
+        baseUrl = "http://" + getBaseurl() + ":8082/";
+    }
 
     @Autowired
     RestTemplate restTemplate;
 
+    private String getBaseurl(){
+        Properties properties = new Properties();
+
+        try {
+            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties");
+
+            if (inputStream != null) {
+                properties.load(inputStream);
+            } else {
+                return "localhost";
+            }
+
+            return properties.get("basePath").toString();
+        }
+        catch (Exception e){
+            return "localhost";
+        }
+    }
+
     public List<Movie> getCandidates(String movieId, int level) {
-        Movie[] response = restTemplate.getForObject(BASEURL + "api/candidates?movie_id=" + movieId + "&level=" + level, Movie[].class);
+        Movie[] response = restTemplate.getForObject(baseUrl + "api/candidates?movie_id=" + movieId + "&level=" + level, Movie[].class);
 
         List<Movie> result = new ArrayList<>();
 
         for(Movie movie : response){
             movie.setCode(getRandomCode(level));
-            movie.setTitle(movieRepository.findByid(movie.getId()).getTitle());
             result.add(movie);
         }
         return result;
