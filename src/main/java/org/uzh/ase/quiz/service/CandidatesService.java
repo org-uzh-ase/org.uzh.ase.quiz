@@ -1,5 +1,7 @@
 package org.uzh.ase.quiz.service;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -23,17 +25,14 @@ public class CandidatesService {
     @Autowired
     RestTemplate restTemplate;
 
-    private String getBaseurl(){
+    public String getBaseurl(){
         Properties properties = new Properties();
 
         try {
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties");
+            File initialFile = new File("./config.properties");
+            InputStream inputStream = new FileInputStream(initialFile);
 
-            if (inputStream != null) {
-                properties.load(inputStream);
-            } else {
-                return "localhost";
-            }
+            properties.load(inputStream);
 
             return properties.get("basePath").toString();
         }

@@ -1,5 +1,6 @@
 package org.uzh.ase.quiz.service;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -12,6 +13,8 @@ import org.springframework.web.client.RestTemplate;
 import org.uzh.ase.quiz.model.Movie;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
@@ -40,5 +43,10 @@ public class CandidatesServiceTest {
         Assert.assertNotNull(response.get(1).getCode());
         Assert.assertNotNull(response.get(2).getCode());
         Assert.assertNotNull(response.get(3).getCode());
+    }
+
+    @Test
+    public void testBaseurl(){
+        assertFalse(StringUtils.isEmpty(candidatesService.getBaseurl()));
     }
 }
