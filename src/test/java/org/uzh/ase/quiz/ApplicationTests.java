@@ -17,5 +17,4 @@ class ApplicationTests {
 	void contextLoads() {
 		assertThat(controller).isNotNull();
 	}
-
 }
