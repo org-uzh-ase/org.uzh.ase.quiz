@@ -7,6 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.uzh.ase.quiz.model.Quiz;
 import org.uzh.ase.quiz.service.QuizService;
 
+/**
+ * REST API for the Quiz Microservice
+ *
+ * <p>More detailed API Documentation available on
+ * <a href="https://app.swaggerhub.com/apis/ltoedt/ASE/0.1">SwaggerHub</a>
+ * </p>
+ */
 @RestController
 public class QuizController {
     @Autowired

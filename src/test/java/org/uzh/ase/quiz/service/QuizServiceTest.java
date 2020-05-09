@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Test for {@link org.uzh.ase.quiz.service.QuizService}
+ */
 @SpringBootTest
 @RunWith(MockitoJUnitRunner.class)
 public class QuizServiceTest {

@@ -16,6 +16,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test for {@link org.uzh.ase.quiz.service.CandidatesService}
+ */
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
 public class CandidatesServiceTest {

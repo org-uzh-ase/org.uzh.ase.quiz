@@ -4,6 +4,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+/**
+ * Java Representation of the MongoDB document "movies". Not to be confused with {@link org.uzh.ase.quiz.model.Movie}
+ * which is the Data Transfer Object used in the REST API.
+ */
 @Document(collection = "movies")
 public class MovieDB {
     @Id

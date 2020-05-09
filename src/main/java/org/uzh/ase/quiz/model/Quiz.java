@@ -2,7 +2,9 @@ package org.uzh.ase.quiz.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Data Transfer Object between Frontend and Quiz Microservice.
+ */
 public class Quiz {
     private String description;
     private List<Movie> answers;
