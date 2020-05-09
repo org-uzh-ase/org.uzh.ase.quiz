@@ -20,7 +20,7 @@ public class Application{
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/api/quizzes/quiz").allowedOrigins("http://localhost");
+				registry.addMapping("/api/quizzes/quiz").allowedOrigins("*");
 			}
 		};
 	}
