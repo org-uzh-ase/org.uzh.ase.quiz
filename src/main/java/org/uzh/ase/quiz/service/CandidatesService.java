@@ -25,18 +25,14 @@ public class CandidatesService {
     @Autowired
     RestTemplate restTemplate;
 
-    private String getBaseurl(){
+    public String getBaseurl(){
         Properties properties = new Properties();
 
         try {
             File initialFile = new File("./config.properties");
             InputStream inputStream = new FileInputStream(initialFile);
 
-            if (inputStream != null) {
-                properties.load(inputStream);
-            } else {
-                return "localhost";
-            }
+            properties.load(inputStream);
 
             return properties.get("basePath").toString();
         }
