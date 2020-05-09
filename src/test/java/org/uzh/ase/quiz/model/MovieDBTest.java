@@ -4,6 +4,9 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+/**
+ * Test for {@link org.uzh.ase.quiz.model.MovieDB}
+ */
 @SpringBootTest
 public class MovieDBTest {
     @Test
