@@ -1,0 +1,47 @@
+version: '3.3'
+services:
+  candidates:
+    image: vladmasarik/candidates
+    restart: always
+    ports:
+    - "8082:8082"
+    networks:
+    - mongo
+
+  mongocandidates:
+    image: vladmasarik/mongo-candidates
+    ports: 
+    - "27020:27020"
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+    - mongo
+
+  mongoquiz:
+    image: vladmasarik/mongo-quiz
+    ports: 
+    - "27021:27021"
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+    - mongo
+
+  quiz:
+    image: vladmasarik/quiz
+    ports: 
+    - "8080:8080"
+    networks:
+    - mongo
+    
+  frontend:
+    image: vladmasarik/quiz-frontend
+    ports: 
+    - "80:80"
+    networks:
+    - mongo
+
+networks:
+    mongo:
+        driver: bridge

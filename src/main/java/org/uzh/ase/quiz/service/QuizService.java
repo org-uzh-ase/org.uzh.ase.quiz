@@ -11,6 +11,9 @@ import org.uzh.ase.quiz.model.Quiz;
 
 import java.util.List;
 
+/**
+ * This service is responsible to build the quiz objected which is returned by the {@link org.uzh.ase.quiz.rest.QuizController}.
+ */
 @Service
 public class QuizService {
     @Autowired
@@ -19,7 +22,11 @@ public class QuizService {
     @Autowired
     MongoTemplate mongoTemplate;
 
-
+    /**
+     * Returns the Quiz object which will be returned in {@link org.uzh.ase.quiz.rest.QuizController}.
+     * @param level level of difficulty (easy = 1, medium = 2, hard = 3)
+     * @return {@link org.uzh.ase.quiz.model.Quiz} object
+     */
     public Quiz getQuiz(int level){
         MovieDB movieDB = randomSample();
         List<Movie> movies = candidatesService.getCandidates(movieDB.getId(), level);
@@ -27,6 +34,10 @@ public class QuizService {
         return new Quiz(movieDB.getDescription(), movies, movies.get(0).getCode());
     }
 
+    /**
+     * Returns a random movie document from the database
+     * @return {@link org.uzh.ase.quiz.model.MovieDB}
+     */
     public MovieDB randomSample(){
         Aggregation agg = Aggregation.newAggregation(
                 Aggregation.match(new Criteria("overview").exists(true)),

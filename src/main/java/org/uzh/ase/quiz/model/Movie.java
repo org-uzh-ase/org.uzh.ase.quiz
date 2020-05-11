@@ -1,7 +1,10 @@
 package org.uzh.ase.quiz.model;
 
+/**
+ * Data Transfer Object between Frontend and Quiz Microservice and between Quiz Microservice and the Candidate Microservice. Not to be confused with {@link org.uzh.ase.quiz.model.MovieDB}
+ * which is the representation of the MongoDB document "movies".
+ */
 public class Movie {
-
     private String id;
     private String title;
     private String poster;

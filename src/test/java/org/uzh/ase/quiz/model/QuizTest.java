@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
+/**
+ * Test for {@link org.uzh.ase.quiz.model.Quiz}
+ */
 @SpringBootTest
 public class QuizTest {
     @Test
