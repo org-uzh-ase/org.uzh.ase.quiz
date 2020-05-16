@@ -37,7 +37,14 @@ public class Movie {
 
     public Movie(){}
 
-public Movie(String id, String poster, String title, String code){
+    /**
+     * Movie Constructor
+     * @param id IMDB movie ID
+     * @param poster URL pointing to a poster representing the movie
+     * @param title Title of the movie
+     * @param code Code randomly assigned to a movie
+     */
+    public Movie(String id, String poster, String title, String code){
     this.id = id;
     this.title = title;
     this.poster = poster;

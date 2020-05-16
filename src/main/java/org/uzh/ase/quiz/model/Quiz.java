@@ -30,10 +30,16 @@ public class Quiz {
     ans.add(new Movie("", "https://upload.wikimedia.org/wikipedia/de/6/6a/Toy_Story_3.svg", "Toy Story 3", "SAND3"));
     ans.add(new Movie("", "https://upload.wikimedia.org/wikipedia/de/9/93/Toy_Story_4.jpeg", "Toy Story 4", "SAND4"));
     this.answers = ans;
-    this.correctAnswer = "SAND";
+    this.correctAnswer = "SAND1";
 }
 
-public Quiz(String description, List<Movie> answers, String correctAnswer){
+    /**
+     * Quiz constructor
+     * @param description Description of the movie we are looking for
+     * @param answers Possible answers to the movie quiz, a list of {@link org.uzh.ase.quiz.model.Movie}
+     * @param correctAnswer Code of the correct movie answer
+     */
+    public Quiz(String description, List<Movie> answers, String correctAnswer){
     this.description = description;
     this.answers = answers;
     this.correctAnswer = correctAnswer;
