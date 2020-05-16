@@ -9,7 +9,7 @@ Microservice responsible for putting together a quiz object used in the frontend
 
 
 ### Running
-We do not provide precompiled JARs, but you can use our pre-built container from [DockerHub](https://hub.docker.com/repository/docker/vladmasarik/candidates). If you are looking for JAR file, you need to build one yourself, see [building guide](##Building).
+We do not provide precompiled JARs, but you can use our pre-built container from [DockerHub](https://hub.docker.com/r/vladmasarik/quiz). If you are looking for JAR file, you need to build one yourself, see [building guide](##Building).
 After you are done with building simply execute the JAR, for example:
 ```
 java -jar target/rest-service-0.0.1-SNAPSHOT.jar
