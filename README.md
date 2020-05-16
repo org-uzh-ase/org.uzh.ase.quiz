@@ -1,5 +1,5 @@
 # Quiz Microservice
-Microservice responsible for putting together a quiz object used in the frontend. For an API specification see [Swagger](https://app.swaggerhub.com/apis/ltoedt/ASE/0.1).
+Microservice responsible for putting together a quiz object used in the frontend. For an API specification see [Swagger](https://app.swaggerhub.com/apis-docs/ltoedt/ASE/0.1).
 
 ## Getting started
 ### Prerequisites
