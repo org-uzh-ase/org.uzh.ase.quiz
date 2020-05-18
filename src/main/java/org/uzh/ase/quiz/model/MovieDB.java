@@ -54,6 +54,12 @@ public class MovieDB {
         this.title = title;
     }
 
+    /**
+     * MovieDB constructor
+     * @param imdbId IMDB movie ID
+     * @param description description of the movie
+     * @param title Title of the movie
+     */
     public MovieDB(String imdbId, String description, String title){
         this.imdbId = imdbId;
         this.description = description;

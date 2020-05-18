@@ -11,7 +11,7 @@ import org.uzh.ase.quiz.service.QuizService;
  * REST API for the Quiz Microservice
  *
  * <p>More detailed API Documentation available on
- * <a href="https://app.swaggerhub.com/apis/ltoedt/ASE/0.1">SwaggerHub</a>
+ * <a href="https://app.swaggerhub.com/apis-docs/ltoedt/ASE/0.1">SwaggerHub</a>
  * </p>
  */
 @RestController

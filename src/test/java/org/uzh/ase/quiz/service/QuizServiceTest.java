@@ -25,15 +25,27 @@ import java.util.List;
 @SpringBootTest
 @RunWith(MockitoJUnitRunner.class)
 public class QuizServiceTest {
+    /**
+     * The database call is mocked in order to prevent side-effects
+     */
     @Mock(answer = Answers.RETURNS_DEEP_STUBS)
     MongoTemplate mongoTemplate;
 
+    /**
+     * The {@link org.uzh.ase.quiz.service.CandidatesService} needs to be mocked because it makes a REST call to the Candidates Microservice
+     */
     @Mock
     CandidatesService candidatesService;
 
+    /**
+     * The {@link org.uzh.ase.quiz.service.QuizService} should work as in production but the database call to retrieve a random movie and the call to the Candidates Microservice are mocked.
+     */
     @InjectMocks
     private QuizService quizService = new QuizService();
 
+    /**
+     * Verify that the {@link org.uzh.ase.quiz.service.QuizService} returns a valid quiz object
+     */
     @Test
     public void testGetQuiz(){
         Movie movie1 = new Movie("1234548", "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIwOTQwNzg1MV5BMl5BanBnXkFtZTcwODc4MDU4Mg@@._V1_UX182_CR0,0,182,268_AL_.jpg", "The Men Who Stare at Goats", "klGjO");

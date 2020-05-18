@@ -9,6 +9,10 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest
 public class MovieDBTest {
+
+    /**
+     * Test the instantiation of a {@link org.uzh.ase.quiz.model.MovieDB} object
+     */
     @Test
     public void testMovieDB(){
         MovieDB movie = new MovieDB("test-imdbId", "some description", "Test Movie");
