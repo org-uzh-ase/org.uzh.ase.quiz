@@ -42,6 +42,23 @@ services:
     networks:
     - mongo
 
+  user:
+    image: vladmasarik/user
+    ports: 
+    - "8081:8081"
+    networks:
+    - mongo
+
+  mongouser:
+    image: vladmasarik/mongo-user
+    ports: 
+    - "27025:27025"
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+    - mongo
+
 networks:
     mongo:
         driver: bridge
