@@ -22,6 +22,11 @@ public class QuizController {
     @Autowired
     QuizService quizService;
 
+    /**
+     * REST API getQuiz. Checkout the <a href="https://app.swaggerhub.com/apis-docs/ltoedt/ASE/0.1#/Quiz%20Microservice/get_api_quizzes_quiz">Swagger Documentation</a>
+     * @param level Level of difficulty for the quiz
+     * @return {@link Quiz}
+     */
     @GetMapping(path = "/api/quizzes/quiz")
     public Quiz getQuiz(@RequestParam(value = "level", defaultValue="1") int level){
         try{
