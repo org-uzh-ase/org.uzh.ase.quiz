@@ -30,6 +30,9 @@ public class QuizController {
         catch(RestClientException e){
             throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Error in Candidates Microservice: " + e.getMessage());
         }
+        catch(Exception e){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error in Quiz Microservice: " + e.getMessage());
+        }
     }
 }
 
