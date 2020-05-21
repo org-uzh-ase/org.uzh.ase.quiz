@@ -16,6 +16,7 @@ public class Application{
 	}
 
 	@Bean
+	@SuppressWarnings("java:S5122") // We had problems getting the containers to work and decided to relax the allowed origins
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
