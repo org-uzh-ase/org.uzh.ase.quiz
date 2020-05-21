@@ -22,4 +22,22 @@ public class MovieTest {
         Assert.assertEquals("Test Movie", movie.getTitle() );
         Assert.assertEquals("test-id", movie.getCode());
     }
+
+    /**
+     * Test the default constructor of a {@link org.uzh.ase.quiz.model.Movie} object
+     */
+    @Test
+    public void testEmptyConstructor(){
+        Movie movie = new Movie();
+
+        Assert.assertNotNull(movie);
+        Assert.assertNull(movie.getId());
+        Assert.assertNull(movie.getTitle());
+        Assert.assertNull(movie.getPoster());
+
+        movie.setCode("SAND");
+        Assert.assertEquals("SAND", movie.getCode());
+        movie.setTitle("SAND");
+        Assert.assertEquals("SAND", movie.getTitle());
+    }
 }
