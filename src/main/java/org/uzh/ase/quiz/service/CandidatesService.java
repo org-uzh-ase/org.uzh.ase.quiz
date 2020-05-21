@@ -3,7 +3,6 @@ package org.uzh.ase.quiz.service;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.uzh.ase.quiz.model.Movie;
 
@@ -54,7 +53,6 @@ public class CandidatesService {
      * @param movieId is the imdb id of the movie for which you want to get three decoy movies
      * @param level level of difficulty (easy = 1, medium = 2, hard = 3)
      * @return a list of Movie objects returned by the candidate microservice
-     * @throws {@link RestClientException} is thrown in case of error during call to candidate microservice
      */
     public List<Movie> getCandidates(String movieId, int level){
         Movie[] response = restTemplate.getForObject(baseUrl + "api/candidates?movie_id=" + movieId + "&level=" + level, Movie[].class);
