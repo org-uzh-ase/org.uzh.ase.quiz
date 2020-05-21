@@ -23,5 +23,14 @@ public class MovieDBTest {
         Assert.assertEquals("Test Movie", movie.getTitle() );
         movie.setId("test-id");
         Assert.assertEquals("test-id", movie.getId());
+
+        movie.setId("something");
+        Assert.assertEquals("something", movie.getId());
+        movie.setTitle("SAND");
+        Assert.assertEquals("SAND", movie.getTitle());
+        movie.setDescription("something else");
+        Assert.assertEquals("something else", movie.getDescription());
+        movie.setImdbId("some id");
+        Assert.assertEquals("some id", movie.getImdbId());
     }
 }
