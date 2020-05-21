@@ -54,7 +54,7 @@ public class CandidatesService {
      * @param level level of difficulty (easy = 1, medium = 2, hard = 3)
      * @return a list of Movie objects returned by the candidate microservice
      */
-    public List<Movie> getCandidates(String movieId, int level) {
+    public List<Movie> getCandidates(String movieId, int level){
         Movie[] response = restTemplate.getForObject(baseUrl + "api/candidates?movie_id=" + movieId + "&level=" + level, Movie[].class);
 
         List<Movie> result = new ArrayList<>();
